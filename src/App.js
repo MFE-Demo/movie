@@ -14,7 +14,6 @@ const defaultHistory = createBrowserHistory();
 
 const App = ({ history = defaultHistory }) => (
   <Router history={history}>
-    <h1>hey</h1>
     <MainColumn>
       <Route exact path="/movie/:id" component={Movie} />
     </MainColumn>
