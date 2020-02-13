@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route } from "react-router-dom";
+import {BrowserRouter as Router, Route } from "react-router-dom";
 import styled from "styled-components";
 import { createBrowserHistory } from "history";
 import Movie from "./Components/Movie/Movie";
@@ -14,6 +14,7 @@ const defaultHistory = createBrowserHistory();
 
 const App = ({ history = defaultHistory }) => (
   <Router history={history}>
+    <h1>hey</h1>
     <MainColumn>
       <Route exact path="/movie/:id" component={Movie} />
     </MainColumn>
