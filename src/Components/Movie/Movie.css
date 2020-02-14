@@ -63,6 +63,7 @@
   align-items: center;
   grid-column-start: 1;
   grid-row-start: 1;
+  grid-row-end: 3;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
