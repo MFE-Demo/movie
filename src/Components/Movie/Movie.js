@@ -50,6 +50,11 @@ class Movie extends Component {
                 <li>
                   <b>Rated:</b> {movie.Rated}
                 </li>
+                {movie.Type === "series" ? (
+                  <li>
+                    <b>Seasons:</b> {movie.totalSeasons}
+                  </li>
+                ) : null}
                 <li>
                   <b>Runtime:</b> {movie.Runtime}
                 </li>
