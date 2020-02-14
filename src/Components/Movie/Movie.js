@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Movie.css";
 
 class Movie extends Component {
   constructor(props) {
@@ -24,18 +25,77 @@ class Movie extends Component {
 
   render() {
     const { loading, error, movie } = this.state;
+    if (movie) {
+      console.log(movie);
+    }
     if (loading) {
       return <div>Loading...</div>;
     }
     return (
-      <div>
-        <header>
-          <h2>{movie.Title}</h2>
+      <div id="movie-wrapper">
+        <header id="movie-header">
+          <h2>
+            {movie.Title}, {movie.Year}
+          </h2>
         </header>
-        <section>
-          <img src={movie.Poster} alt="Movie art" />
+        <section id="dashboard-grid">
+          <div id="top-left">
+            <img src={movie.Poster} alt="Movie art" />
+          </div>
+          {/* <div id="bottom-left"></div> */}
+          <div id="top-right">
+            <div id="movie-plot">{movie.Plot}</div>
+            <div id="movie-details">
+              <ul>
+                <li>
+                  <b>Rated:</b> {movie.Rated}
+                </li>
+                <li>
+                  <b>Runtime:</b> {movie.Runtime}
+                </li>
+                {movie.BoxOffice && movie.boxOffice !== null ? (
+                  <li>
+                    <b>Box Office:</b> {movie.BoxOffice}
+                  </li>
+                ) : null}
+                <li>
+                  <b>Released:</b> {movie.Released}
+                </li>
+                <li>
+                  <b>Genre:</b> {movie.Genre}
+                </li>
+                <li>
+                  <b>Director:</b> {movie.Director}
+                </li>
+                <li>
+                  <b>Actors:</b> {movie.Actors}
+                </li>
+              </ul>
+            </div>
+            <div id="movie-ratings">
+              {movie.Ratings && movie.Ratings[0] ? (
+                <div className="ratings-wrapper">
+                  <h2>{movie.Ratings[0].Value}</h2>
+                  <h4>{movie.Ratings[0].Source}</h4>
+                </div>
+              ) : null}
+
+              {movie.Ratings && movie.Ratings[1] ? (
+                <div className="ratings-wrapper">
+                  <h2>{movie.Ratings[1].Value}</h2>
+                  <h4>{movie.Ratings[1].Source}</h4>
+                </div>
+              ) : null}
+              {movie.Ratings && movie.Ratings[2] ? (
+                <div className="ratings-wrapper">
+                  <h2>{movie.Ratings[2].Value}</h2>
+                  <h4>{movie.Ratings[2].Source}</h4>
+                </div>
+              ) : null}
+            </div>
+          </div>
+          {/* <div id="bottom-right"></div> */}
         </section>
-        <div>{movie.Plot}</div>
       </div>
     );
   }
