@@ -24,9 +24,17 @@
   border-radius: 5px;
 }
 
+#movie-header {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 #movie-header h2 {
-  padding: 4px;
+  padding: 10px;
   margin-left: 1%;
+  margin: 0;
 }
 
 #movie-plot {
@@ -37,6 +45,7 @@
 
 #movie-details ul {
   list-style: none;
+  margin-left: 3%;
 }
 
 #movie-ratings {
