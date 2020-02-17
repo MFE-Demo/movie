@@ -34,7 +34,7 @@ class Movie extends Component {
     return (
       <div id="movie-wrapper">
         <header id="movie-header">
-          <h2>
+          <h2 style={{ color: "white" }}>
             {movie.Title}, {movie.Year}
           </h2>
         </header>
